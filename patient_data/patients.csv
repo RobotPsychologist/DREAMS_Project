@@ -1,0 +1,5 @@
+patient_id,ohip_id,patient_first_name,patient_last_name,age,date_of_birth,gender,sex,diabetes_type,address,postal_code,patient_primary_phone_number,patient_primary_email,patient_emergency_contact,patient_emergency_contact_number,patient_primary_care_physician,patient_primary_care_physician_phone
+CJR000001,1234567890XT,Peasant Christopher,Risi,36,unknown,male,male,LADA,314 Stable Lane,BSTGUY,000-000-0000,cjrisi@uwaterloo.ca,No Friends,000-000-0000, Dr. Gregory House,555-555-5555
+QGN000002,9999999999XT,Queen Gina,Najiman,21,unknown,female,female,None,1 Palace Drive,B4DON3,000-000-0000,p2najiman@uwaterloo.ca,Queen Dowager Memoona,000-000-0000, Dr. Rick Sanchez,555-555-5555
+QMM000003,8888888888XT,Queen Dowager Memoona,Maah,21,unknown,female,female,None,2 Palace Drive,B4DTW0,000-000-0000,mmaah@uwaterloo.ca,Queen Gina,000-000-0000, Dr. John Zoidberg,555-555-5555
+DHA000004,6666666666XT,Duke Hossein,Aboutalebi,136,unknown,male,male,None,55 Rich Street,N2T0D0,000-000-0000,hossein.aboutalebi@uwaterloo.ca,Mum,000-000-0000, Dr. Algernop Krieger,555-555-5555
