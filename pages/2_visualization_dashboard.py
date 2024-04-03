@@ -22,6 +22,8 @@ st.set_page_config(page_title='DREAMS',
 st.title('DREAMS: Diabetic Retinopathy AI Management System :eyes::thought_balloon:')
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
+LOGO_IMAGE_PATH = 'images/AIEye4.jpeg'
+
 def glucose_categorizer(blood_glucose_level):
     '''This function categorizes the blood glucose level into 4 categories: 
             Low, Normal, High, Very High.'''
@@ -64,7 +66,7 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding='ISO-8859-1')
 else:
-    os.chdir(r'/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project') # fix this later
+    #os.chdir(r'/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project') # fix this later
     df = pd.read_csv('patient_data/cgm_tables/CJR000001/20240309_Patient_glucose.csv', skiprows=1) #Make this general
 
 # Add Glucose Level Labels
@@ -86,7 +88,7 @@ with col2:
 df = df[(df["Device Timestamp"] >= date1) & (df["Device Timestamp"] <= date2)].copy()
 
 # Create for CGM device
-st.sidebar.image("/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/Logo.png", use_column_width=True)
+st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 st.sidebar.header("Choose your filter: ")
 device = st.sidebar.multiselect("Select the device", df["Device"].unique())
 
@@ -149,25 +151,25 @@ with tab1:
     with fundus_col1:
         st.subheader("Prev. Visit Left Fundus")
         left_eye_prev = Image.open(
-            '/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_left.jpeg')
+            'sample/10_left.jpeg')
         st.image(left_eye_prev, caption='**Left Eye** Status: 0 No DR', use_column_width=True)
 
     with fundus_col2:
         st.subheader("Prev. Visit Right Fundus")
         right_eye_prev = Image.open(
-            '/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_right.jpeg')
+            'sample/10_right.jpeg')
         st.image(right_eye_prev, caption='**Right Eye:** Status: 0 No DR', use_column_width=True)
 
     with fundus_col3:
         st.subheader("Curr. Visit Left Fundus")
         left_eye_curr = Image.open(
-            '/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_left.jpeg')
+            'sample/15_left.jpeg')
         st.image(left_eye_curr, caption='**Left Eye** Status: 1 Mild DR', use_column_width=True)
 
     with fundus_col4:
         st.subheader("Curr. Visit Right Fundus")
         right_eye_curr = Image.open(
-            '/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_right.jpeg')
+            'sample/15_right.jpeg')
         st.image(right_eye_curr, caption='**Right Eye:** 2 Moderate DR', use_column_width=True)
 
 with tab2:        
@@ -175,8 +177,8 @@ with tab2:
     with fundus_left_compare:
         st.subheader("Left Fundus")
         image_comparison(
-            img1 = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_left.jpeg'),
-            img2 = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_left.jpeg'),
+            img1 = Image.open('sample/10_left.jpeg'),
+            img2 = Image.open('sample/15_left.jpeg'),
             make_responsive=True,
             label1="Prev. Visit",
             label2="Curr. Visit")
@@ -184,8 +186,8 @@ with tab2:
     with fundus_right_compare:
         st.subheader("Right Fundus")
         image_comparison(
-            img1 = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_right.jpeg'),
-            img2 = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_right.jpeg'),
+            img1 = Image.open('sample/10_right.jpeg'),
+            img2 = Image.open('sample/15_right.jpeg'),
             make_responsive=True,
             label1="Prev. Visit",
             label2="Curr. Visit")
@@ -194,42 +196,42 @@ with tab3:
     fundus_col1, fundus_col2, fundus_col3, fundus_col4 = st.columns((4))    
     with fundus_col1:
         st.subheader("Prev. Visit Left Fundus")
-        left_eye_prev = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_left.jpeg')
+        left_eye_prev = Image.open('sample/10_left.jpeg')
         st.image(left_eye_prev, caption='**Left Eye** Status: 0 No DR', use_column_width=True)
 
     with fundus_col2:
         st.subheader("Prev. Visit Right Fundus")
-        right_eye_prev = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_right.jpeg')
+        right_eye_prev = Image.open('sample/10_right.jpeg')
         st.image(right_eye_prev, caption='**Right Eye:** Status: 0 No DR', use_column_width=True)
 
     with fundus_col3:
         st.subheader("Curr. Visit Left Fundus")
-        left_eye_curr = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_left.jpeg')
+        left_eye_curr = Image.open('sample/15_left.jpeg')
         st.image(left_eye_curr, caption='**Left Eye** Status: 1 Mild DR', use_column_width=True)
 
     with fundus_col4:
         st.subheader("Curr. Visit Right Fundus")
-        right_eye_curr = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_right.jpeg')
+        right_eye_curr = Image.open('sample/15_right.jpeg')
         st.image(right_eye_curr, caption='**Right Eye:** 2 Moderate DR', use_column_width=True)
 
 with tab4:
     fundus_col1, fundus_col2, fundus_col3, fundus_col4 = st.columns((4))    
     with fundus_col1:
         st.subheader("Prev. Visit Left Fundus")
-        left_eye_prev = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_left.jpeg')
+        left_eye_prev = Image.open('sample/10_left.jpeg')
         st.image(left_eye_prev, caption='**Left Eye** Status: 0 No DR', use_column_width=True)
 
     with fundus_col2:
         st.subheader("Prev. Visit Right Fundus")
-        right_eye_prev = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/10_right.jpeg')
+        right_eye_prev = Image.open('sample/10_right.jpeg')
         st.image(right_eye_prev, caption='**Right Eye:** Status: 0 No DR', use_column_width=True)
 
     with fundus_col3:
         st.subheader("Curr. Visit Left Fundus")
-        left_eye_curr = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_left.jpeg')
+        left_eye_curr = Image.open('sample/15_left.jpeg')
         st.image(left_eye_curr, caption='**Left Eye** Status: 1 Mild DR', use_column_width=True)
 
     with fundus_col4:
         st.subheader("Curr. Visit Right Fundus")
-        right_eye_curr = Image.open('/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/sample/15_right.jpeg')
+        right_eye_curr = Image.open('sample/15_right.jpeg')
         st.image(right_eye_curr, caption='**Right Eye:** 2 Moderate DR', use_column_width=True)        

@@ -12,7 +12,8 @@ st.set_page_config(page_title='DREAMS', page_icon=":thought_balloon:", layout="w
 
 st.title('DREAMS: Diabetic Retinopathy AI Management System :eyes::thought_balloon:')
 
-st.sidebar.image("/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project/Logo.png", use_column_width=True)
+LOGO_IMAGE_PATH = 'images/AIEye4.jpeg'
+st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 
 st.markdown(
     """
