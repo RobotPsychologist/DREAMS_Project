@@ -12,7 +12,7 @@ st.set_page_config(page_title='DREAMS', page_icon=":thought_balloon:", layout="w
 
 st.title('DREAMS: Diabetic Retinopathy AI Management System :eyes::thought_balloon:')
 
-LOGO_IMAGE_PATH = 'images/AIEye4.jpeg'
+LOGO_IMAGE_PATH = 'images/AIEye7.jpeg'
 st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 
 st.markdown(

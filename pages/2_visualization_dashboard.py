@@ -22,7 +22,7 @@ st.set_page_config(page_title='DREAMS',
 st.title('DREAMS: Diabetic Retinopathy AI Management System :eyes::thought_balloon:')
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
-LOGO_IMAGE_PATH = 'images/AIEye4.jpeg'
+LOGO_IMAGE_PATH = 'images/AIEye7.jpeg'
 
 def glucose_categorizer(blood_glucose_level):
     '''This function categorizes the blood glucose level into 4 categories: 

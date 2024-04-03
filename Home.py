@@ -5,7 +5,6 @@ It also allows users to track their retinal health over time.
 The dashboard is built using Streamlit and Plotly.'''
 
 import streamlit as st
-from streamlit_extras.app_logo import add_logo
 
 st.set_page_config(
     page_title='DREAMS',
@@ -13,14 +12,10 @@ st.set_page_config(
     layout='wide'
 )
 
-LOGO_IMAGE_PATH = 'images/AIEye4.jpeg'
-add_logo(LOGO_IMAGE_PATH)
+LOGO_IMAGE_PATH = 'images/AIEye7.jpeg'
 st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 
 st.write('# Welcome to DREAMS! :eyes::thought_balloon:')
-
-
-
 
 st.markdown(
     """
