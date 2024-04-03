@@ -1,0 +1,6 @@
+streamlit
+streamlit_image_comparison
+plotly.express
+pandas
+numpy
+PIL
