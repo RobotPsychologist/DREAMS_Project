@@ -1,4 +1,5 @@
 streamlit_image_comparison
+streamlit_extras.app_logo
 plotly.express
 pandas
 numpy
