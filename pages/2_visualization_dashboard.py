@@ -10,7 +10,6 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 from streamlit_image_comparison import image_comparison
-import os
 from PIL import Image
 warnings.filterwarnings('ignore')
 
