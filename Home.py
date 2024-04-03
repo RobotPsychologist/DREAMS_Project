@@ -5,6 +5,7 @@ It also allows users to track their retinal health over time.
 The dashboard is built using Streamlit and Plotly.'''
 
 import streamlit as st
+from streamlit_extras.app_logo import add_logo
 
 st.set_page_config(
     page_title='DREAMS',
@@ -12,11 +13,14 @@ st.set_page_config(
     layout='wide'
 )
 
+LOGO_IMAGE_PATH = 'images/AIEye4.jpeg'
+add_logo(LOGO_IMAGE_PATH)
+st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
+
 st.write('# Welcome to DREAMS! :eyes::thought_balloon:')
 
-LOGO_IMAGE_PATH = 'images/AIEye4.jpeg'
-st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
-st.sidebar.success("Patient Submission Form")
+
+
 
 st.markdown(
     """
@@ -35,12 +39,13 @@ with bio_col1:
     st.image('images/FounderLogos/RisiLogo.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
     st.markdown("""    
         - [LinkedIn](https://www.linkedin.com/in/hossein-aboutalebi-2922a2b1/)
+        - [Github](https://github.com/h-aboutalebi)
         """
         )
 with bio_col2:
     ## Gina Najiman
     st.markdown("""##### Gina Najiman""")
-    st.image('images/FounderLogos/RisiLogo.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
+    st.image('images/FounderLogos/NajimanLogo.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
     st.markdown("""    
         - [LinkedIn](https://www.linkedin.com/in/paerhati-gina-najiman-724274139/)
         """
@@ -65,16 +70,16 @@ with bio_col4:
 
 st.markdown(    
     """
-    ### Want to learn more about building your own app?
-    - Check out [streamlit.io](https://streamlit.io)
-    - Jump into our [documentation](https://docs.streamlit.io)
-    - Ask a question in our [community
-        forums](https://discuss.streamlit.io)
     ### More Information About Diabetic Reinopathy
     - [Diabetes Canada - Retinopathy](https://www.diabetes.ca/health-care-providers/clinical-practice-guidelines/chapter-30#panel-tab_FullText)
     - [American Diabetes Association - Retinopathy](https://www.diabetes.org/diabetes/complications/eye-complications)
     - [Continuous Glucose Monitoring](https://www.diabetes.ca/DiabetesCanadaWebsite/media/Managing-My-Diabetes/Tools%20and%20Resources/Continuous_Glucose_Monitoring_Advocacy_Pkg_4.pdf?ext=.pdf)
     - [Time in Range & Diabetic Retinopathy](https://diabetesjournals.org/care/article/41/11/2370/36582/Association-of-Time-in-Range-as-Assessed-by)
     - [The BETTER registry](https://type1better.com/en/the-better-project/the-better-registry/)
+    
+    ### Want to learn more about building your own app?
+    - Check out [streamlit.io](https://streamlit.io)
+    - Jump into our [documentation](https://docs.streamlit.io)
+    - Ask a question in our [community forums](https://discuss.streamlit.io)
     """ 
 )
