@@ -21,9 +21,50 @@ st.sidebar.success("Patient Submission Form")
 st.markdown(
     """
     DREAMS is an open-source app framework built specifically to aid in the detection, managment and risk assessment of the leading cause of preventable blindness, diabetic retinopathy.
-    **👈 Patient Submission Form** to see how our app works!
+
     ### About Us
     DREAMS was created by a team of graduate students at the University of Waterloo. 
+    #### Team Members:
+    """)
+
+# Mini Bios
+bio_col1, bio_col2, bio_col3, bio_col4 = st.columns([0.25,0.25,0.25,0.25])
+with bio_col1:
+    ## Hossein Aboutalebi
+    st.markdown("""##### Hossein Aboutalebi""")
+    st.image('images/FounderLogos/RisiLogo.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
+    st.markdown("""    
+        - [LinkedIn](https://www.linkedin.com/in/hossein-aboutalebi-2922a2b1/)
+        """
+        )
+with bio_col2:
+    ## Gina Najiman
+    st.markdown("""##### Gina Najiman""")
+    st.image('images/FounderLogos/RisiLogo.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
+    st.markdown("""    
+        - [LinkedIn](https://www.linkedin.com/in/paerhati-gina-najiman-724274139/)
+        """
+        )
+with bio_col3:
+    ## Memoona Maah
+    st.markdown("""##### Memoona Maah""")
+    st.image('images/FounderLogos/RisiLogo.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
+    st.markdown("""    
+        - [LinkedIn](https://www.linkedin.com/in/memoona-maah/)
+        """
+        )
+with bio_col4:
+    ## Christopher Risi
+    st.markdown("""##### Christopher Risi""")
+    st.image('images/FounderLogos/RisiLogo.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
+    st.markdown("""    
+        - [LinkedIn](https://www.linkedin.com/in/christopherrisi/)
+        - [GitHub](https://github.com/RobotPsychologist)        
+        """
+        )
+
+st.markdown(    
+    """
     ### Want to learn more about building your own app?
     - Check out [streamlit.io](https://streamlit.io)
     - Jump into our [documentation](https://docs.streamlit.io)
