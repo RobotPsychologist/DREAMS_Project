@@ -39,7 +39,7 @@ def glucose_categorizer(blood_glucose_level):
 
 def time_in_range_calculator(tir_df):
     '''This function calculates the time in range for the glucose levels.'''
-    total_time = tir_df[tir_df['Glucose Level'] == '1_Low'| 
+    total_time = tir_df[tir_df['Glucose Level'] == '1_Low'|
                         tir_df['Glucose Level'] == '2_Normal'|
                         tir_df['Glucose Level'] == '3_High'|
                         tir_df['Glucose Level'] == '4_Very High'].count()
@@ -47,15 +47,21 @@ def time_in_range_calculator(tir_df):
     normal_percent = tir_df[tir_df['Glucose Level'] == '2_Normal'].count()/total_time
     high_percent = tir_df[tir_df['Glucose Level'] == '3_High'].count()/total_time
     very_high_percent = tir_df[tir_df['Glucose Level'] == '4_Very High'].count()/total_time
-    
     return [low_percent, normal_percent, high_percent, very_high_percent]
 
-# Data Uploader
-data_col1, data_col2 = st.columns([0.85,0.1])
+# Data Uploaders
+data_col1, data_col2, data_col3 = st.columns([0.33,0.33,0.33])
 with data_col1:
-    fl = st.file_uploader(':file_folder: Upload your Continuous Glucose Monitor data',
+    fl = st.file_uploader(':file_folder: Upload Continuous Glucose Monitor data.',
                           type=['csv', 'txt', 'xlsx','xls'])
 with data_col2:
+    fl = st.file_uploader(':file_folder: Upload Fitness Monitoring Device data.',
+                          type=['csv', 'txt', 'xlsx','xls'])
+with data_col3:
+    fl = st.file_uploader(':file_folder: Upload fundus images.',
+                          type=['jpg', 'jpeg', 'png'])
+
+with st.sidebar:
     with st.popover("Help Finding CGM Data",  
                     help="Click here for step-by-step instructions to find your CGM data."):
         st.markdown("Instructions:")
@@ -69,7 +75,7 @@ else:
     df = pd.read_csv('patient_data/cgm_tables/CJR000001/20240309_Patient_glucose.csv', skiprows=1) #Make this general
 
 # Add Glucose Level Labels
-df['Glucose Level'] = df['Historic Glucose mmol/L'].apply(np.vectorize(glucose_categorizer))  
+df['Glucose Level'] = df['Historic Glucose mmol/L'].apply(np.vectorize(glucose_categorizer))
 df_time_in_range = df.groupby('Glucose Level').size().reset_index(name='counts')
 
 col1, col2 = st.columns((2))
