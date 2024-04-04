@@ -27,9 +27,12 @@ st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 with st.sidebar:
     with st.popover("Help Finding CGM Data",  
                     help="Click here for step-by-step instructions to find your CGM data."):
-        st.markdown("Instructions:")
+        st.markdown("#Instructions:")
+        st.markdown("1. Navigate to the [LibreView website](https://www.libreview.com/).")
         st.image('images/libreViewInstructions/LibreViewLogIn.png', use_column_width=True)
+        st.markdown("2. Click on the 'Download Glucose Data' button.")
         st.image('images/libreViewInstructions/DownloadGlucoseData.png', use_column_width=True)
+        st.markdown("3. Resolve the reCAPTCHA and press the 'Download' button.")
         st.image('images/libreViewInstructions/PressDownload.png', use_column_width=True)
 
 
