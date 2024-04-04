@@ -169,7 +169,7 @@ with tab1:
     with raw_fundus_col2:
         st.subheader("Prev. Visit Right Fundus")
         right_eye_prev = Image.open(
-            'patient_data/eye_images/CJR000001/20200401_right_fundus.jpg')
+            'patient_data/eye_images/CJR000001/20240401_right_fundus.jpg')
         st.image(right_eye_prev, caption='Right Eye: Status: 0 No DR', use_column_width=True)
 
     with raw_fundus_col3:
@@ -181,7 +181,7 @@ with tab1:
     with raw_fundus_col4:
         st.subheader("Curr. Visit Right Fundus")
         right_eye_curr = Image.open(
-            'patient_data/eye_images/CJR000001/20200403_right_fundus.jpg')
+            'patient_data/eye_images/CJR000001/20240403_right_fundus.jpg')
         st.image(right_eye_curr, caption='Right Eye: 2 Moderate DR', use_column_width=True)
 
 with tab2:        
