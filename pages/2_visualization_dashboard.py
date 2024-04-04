@@ -21,7 +21,14 @@ st.set_page_config(page_title='DREAMS',
 st.title('DREAMS: Diabetic Retinopathy AI Management System :eyes::thought_balloon:')
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
+# SIDEBAR
 LOGO_IMAGE_PATH = 'images/AIEye7.png'
+st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
+with st.sidebar:
+    with st.popover("Help Finding CGM Data",  
+                    help="Click here for step-by-step instructions to find your CGM data."):
+        st.markdown("Instructions:")
+
 
 def glucose_categorizer(blood_glucose_level):
     '''This function categorizes the blood glucose level into 4 categories: 
@@ -55,16 +62,11 @@ with data_col1:
     fl = st.file_uploader(':file_folder: Upload Continuous Glucose Monitor data.',
                           type=['csv', 'txt', 'xlsx','xls'])
 with data_col2:
-    fl = st.file_uploader(':file_folder: Upload Fitness Monitoring Device data.',
+    fl = st.file_uploader(':runner: Upload Fitness Monitoring Device data.',
                           type=['csv', 'txt', 'xlsx','xls'])
 with data_col3:
-    fl = st.file_uploader(':file_folder: Upload fundus images.',
+    fl = st.file_uploader(':eye: Upload fundus images.',
                           type=['jpg', 'jpeg', 'png'])
-
-with st.sidebar:
-    with st.popover("Help Finding CGM Data",  
-                    help="Click here for step-by-step instructions to find your CGM data."):
-        st.markdown("Instructions:")
 
 if fl is not None:
     filename = fl.name
@@ -72,7 +74,7 @@ if fl is not None:
     df = pd.read_csv(filename, encoding='ISO-8859-1')
 else:
     #os.chdir(r'/home/cjrisi/Documents/School/Coursework/HealthData/DREAMS_Project') # fix this later
-    df = pd.read_csv('patient_data/cgm_tables/CJR000001/20240309_Patient_glucose.csv', skiprows=1) #Make this general
+    df = pd.read_csv('patient_data/cgm_tables/CJR000001/20240309_Patient_glucose.csv', skiprows=1)
 
 # Add Glucose Level Labels
 df['Glucose Level'] = df['Historic Glucose mmol/L'].apply(np.vectorize(glucose_categorizer))
@@ -93,7 +95,6 @@ with col2:
 df = df[(df["Device Timestamp"] >= date1) & (df["Device Timestamp"] <= date2)].copy()
 
 # Create for CGM device
-st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 st.sidebar.header("Choose your filter: ")
 device = st.sidebar.multiselect("Select the device", df["Device"].unique())
 
