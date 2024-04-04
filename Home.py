@@ -40,7 +40,7 @@ with bio_col1:
 with bio_col2:
     ## Memoona Maah
     st.markdown("""##### Memoona Maah""")
-    st.image('images/FounderLogos/Maah2.png', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
+    st.image('images/FounderLogos/Maah2.jpg', caption=None, width=150, use_column_width=True, clamp=False, channels="RGB", output_format="auto")
     st.markdown("""    
         - [LinkedIn](https://www.linkedin.com/in/memoona-maah/)
         """
