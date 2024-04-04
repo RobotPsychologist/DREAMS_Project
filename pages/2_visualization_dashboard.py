@@ -28,6 +28,9 @@ with st.sidebar:
     with st.popover("Help Finding CGM Data",  
                     help="Click here for step-by-step instructions to find your CGM data."):
         st.markdown("Instructions:")
+        st.image('images/libreViewInstructions/LibreViewLogIn.png', use_column_width=True)
+        st.image('images/libreViewInstructions/DownloadGlucoseData.png', use_column_width=True)
+        st.image('images/libreViewInstructions/PressDownload.png', use_column_width=True)
 
 
 def glucose_categorizer(blood_glucose_level):
