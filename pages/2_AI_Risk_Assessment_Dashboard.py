@@ -240,7 +240,7 @@ with tab4:
     with segmentation_right_compare:
         st.subheader("Right Eye")
         image_comparison(
-            img1 = Image.open('patient_data/eye_images/CJR000001/20200403_right_fundus.jpg'),
+            img1 = Image.open('patient_data/eye_images/CJR000001/20240403_right_fundus.jpg'),
             img2 = Image.open('patient_data/ai_segmented_images/CJR000001/20240403_right_ai_seg.jpg'),
             make_responsive=True,
             label1="Raw Fundus",
