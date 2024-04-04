@@ -164,12 +164,12 @@ with tab1:
         st.subheader("Prev. Visit Left Fundus")
         left_eye_prev = Image.open(
             'patient_data/eye_images/CJR000001/20240101_left_fundus.jpg')
-        st.image(left_eye_prev, caption='**Left Eye** Status: 0 No DR', use_column_width=True)
+        st.image(left_eye_prev, caption='Left Eye Status: 0 No DR', use_column_width=True)
 
     with fundus_col2:
         st.subheader("Prev. Visit Right Fundus")
         right_eye_prev = Image.open(
-            'patient_data/eye_images/CJR000001/20200403_right_fundus.jpg')
+            'patient_data/eye_images/CJR000001/20200401_right_fundus.jpg')
         st.image(right_eye_prev, caption='Right Eye: Status: 0 No DR', use_column_width=True)
 
     with fundus_col3:
