@@ -12,7 +12,7 @@ st.set_page_config(
     layout='wide'
 )
 
-LOGO_IMAGE_PATH = 'images/AIEye7.png'
+LOGO_IMAGE_PATH = 'images/logos/AIEye7.png'
 st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 
 st.write('# Welcome to DREAMS! :eyes::thought_balloon:')

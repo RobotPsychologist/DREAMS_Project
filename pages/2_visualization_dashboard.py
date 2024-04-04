@@ -22,7 +22,7 @@ st.title('DREAMS: Diabetic Retinopathy AI Management System :eyes::thought_ballo
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
 # SIDEBAR
-LOGO_IMAGE_PATH = 'images/AIEye7.png'
+LOGO_IMAGE_PATH = 'images/logos/AIEye7.png'
 st.sidebar.image(LOGO_IMAGE_PATH, use_column_width=True)
 with st.sidebar:
     with st.popover("Help Finding CGM Data",  
@@ -163,34 +163,34 @@ with tab1:
     with fundus_col1:
         st.subheader("Prev. Visit Left Fundus")
         left_eye_prev = Image.open(
-            'sample/10_left.jpeg')
+            'patient_data/eye_images/CJR000001/20240101_left_fundus.jpg')
         st.image(left_eye_prev, caption='**Left Eye** Status: 0 No DR', use_column_width=True)
 
     with fundus_col2:
         st.subheader("Prev. Visit Right Fundus")
         right_eye_prev = Image.open(
-            'sample/10_right.jpeg')
-        st.image(right_eye_prev, caption='**Right Eye:** Status: 0 No DR', use_column_width=True)
+            'patient_data/eye_images/CJR000001/20200403_right_fundus.jpg')
+        st.image(right_eye_prev, caption='Right Eye: Status: 0 No DR', use_column_width=True)
 
     with fundus_col3:
         st.subheader("Curr. Visit Left Fundus")
         left_eye_curr = Image.open(
-            'sample/15_left.jpeg')
-        st.image(left_eye_curr, caption='**Left Eye** Status: 1 Mild DR', use_column_width=True)
+            'patient_data/eye_images/CJR000001/20240403_left_fundus.jpg')
+        st.image(left_eye_curr, caption='Left Eye Status: 1 Mild DR', use_column_width=True)
 
     with fundus_col4:
         st.subheader("Curr. Visit Right Fundus")
         right_eye_curr = Image.open(
-            'sample/15_right.jpeg')
-        st.image(right_eye_curr, caption='**Right Eye:** 2 Moderate DR', use_column_width=True)
+            'patient_data/eye_images/CJR000001/20200403_right_fundus.jpg')
+        st.image(right_eye_curr, caption='Right Eye: 2 Moderate DR', use_column_width=True)
 
 with tab2:        
     fundus_left_compare, fundus_right_compare = st.columns((2))
     with fundus_left_compare:
         st.subheader("Left Fundus")
         image_comparison(
-            img1 = Image.open('sample/10_left.jpeg'),
-            img2 = Image.open('sample/15_left.jpeg'),
+            img1 = Image.open('patient_data/eye_images/CJR000001/20240101_left_fundus.jpg'),
+            img2 = Image.open('patient_data/eye_images/CJR000001/20200403_left_fundus.jpg'),
             make_responsive=True,
             label1="Prev. Visit",
             label2="Curr. Visit")
@@ -198,8 +198,8 @@ with tab2:
     with fundus_right_compare:
         st.subheader("Right Fundus")
         image_comparison(
-            img1 = Image.open('sample/10_right.jpeg'),
-            img2 = Image.open('sample/15_right.jpeg'),
+            img1 = Image.open('patient_data/eye_images/CJR000001/20240101_right_fundus.jpg'),
+            img2 = Image.open('patient_data/eye_images/CJR000001/20200403_right_fundus.jpg'),
             make_responsive=True,
             label1="Prev. Visit",
             label2="Curr. Visit")
@@ -207,43 +207,41 @@ with tab2:
 with tab3:
     fundus_col1, fundus_col2, fundus_col3, fundus_col4 = st.columns((4))    
     with fundus_col1:
-        st.subheader("Prev. Visit Left Fundus")
-        left_eye_prev = Image.open('sample/10_left.jpeg')
+        st.subheader("Prev. Visit Left")
+        left_eye_prev = Image.open('patient_data/ai_segmented_images/CJR000001/20240101_left_ai_seg.jpg')
         st.image(left_eye_prev, caption='**Left Eye** Status: 0 No DR', use_column_width=True)
 
     with fundus_col2:
-        st.subheader("Prev. Visit Right Fundus")
-        right_eye_prev = Image.open('sample/10_right.jpeg')
+        st.subheader("Prev. Visit Right")
+        right_eye_prev = Image.open('patient_data/ai_segmented_images/CJR000001/20240101_right_ai_seg.jpg')
         st.image(right_eye_prev, caption='**Right Eye:** Status: 0 No DR', use_column_width=True)
 
     with fundus_col3:
-        st.subheader("Curr. Visit Left Fundus")
-        left_eye_curr = Image.open('sample/15_left.jpeg')
+        st.subheader("Curr. Visit Left")
+        left_eye_curr = Image.open('patient_data/ai_segmented_images/CJR000001/20240403_left_ai_seg.jpg')
         st.image(left_eye_curr, caption='**Left Eye** Status: 1 Mild DR', use_column_width=True)
 
     with fundus_col4:
-        st.subheader("Curr. Visit Right Fundus")
-        right_eye_curr = Image.open('sample/15_right.jpeg')
+        st.subheader("Curr. Visit Right")
+        right_eye_curr = Image.open('patient_data/ai_segmented_images/CJR000001/20240403_right_ai_seg.jpg')
         st.image(right_eye_curr, caption='**Right Eye:** 2 Moderate DR', use_column_width=True)
 
 with tab4:
-    fundus_col1, fundus_col2, fundus_col3, fundus_col4 = st.columns((4))    
-    with fundus_col1:
-        st.subheader("Prev. Visit Left Fundus")
-        left_eye_prev = Image.open('sample/10_left.jpeg')
-        st.image(left_eye_prev, caption='**Left Eye** Status: 0 No DR', use_column_width=True)
+    segmentation_left_compare, segmentation_right_compare = st.columns((2))
+    with fundus_left_compare:
+        st.subheader("Left Eye")
+        image_comparison(
+            img1 = Image.open('patient_data/eye_images/CJR000001/20240403_left_fundus.jpg'),
+            img2 = Image.open('patient_data/ai_segmented_images/CJR000001/20240403_left_ai_seg.jpg'),
+            make_responsive=True,
+            label1="Raw Fundus",
+            label2="AI Importance Weights")
 
-    with fundus_col2:
-        st.subheader("Prev. Visit Right Fundus")
-        right_eye_prev = Image.open('sample/10_right.jpeg')
-        st.image(right_eye_prev, caption='**Right Eye:** Status: 0 No DR', use_column_width=True)
-
-    with fundus_col3:
-        st.subheader("Curr. Visit Left Fundus")
-        left_eye_curr = Image.open('sample/15_left.jpeg')
-        st.image(left_eye_curr, caption='**Left Eye** Status: 1 Mild DR', use_column_width=True)
-
-    with fundus_col4:
-        st.subheader("Curr. Visit Right Fundus")
-        right_eye_curr = Image.open('sample/15_right.jpeg')
-        st.image(right_eye_curr, caption='**Right Eye:** 2 Moderate DR', use_column_width=True)        
+    with fundus_right_compare:
+        st.subheader("Right Eye")
+        image_comparison(
+            img1 = Image.open('patient_data/eye_images/CJR000001/20200403_right_fundus.jpg'),
+            img2 = Image.open('patient_data/ai_segmented_images/CJR000001/20240403_right_ai_seg.jpg'),
+            make_responsive=True,
+            label1="Raw Fundus",
+            label2="AI Importance Weights")     
