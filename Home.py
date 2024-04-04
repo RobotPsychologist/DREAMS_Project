@@ -19,7 +19,7 @@ st.write('# Welcome to DREAMS! :eyes::thought_balloon:')
 
 st.markdown(
     """
-    DREAMS is an open-source app framework built specifically to aid in the detection, managment and risk assessment of the leading cause of preventable blindness, diabetic retinopathy.
+    DREAMS is an app framework built specifically to aid in the detection, managment and risk assessment of the leading cause of preventable blindness, diabetic retinopathy.
 
     ### About Us
     DREAMS was created by a team of graduate students at the University of Waterloo. 
