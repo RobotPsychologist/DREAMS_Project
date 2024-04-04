@@ -190,7 +190,7 @@ with tab2:
         st.subheader("Left Fundus")
         image_comparison(
             img1 = Image.open('patient_data/eye_images/CJR000001/20240101_left_fundus.jpg'),
-            img2 = Image.open('patient_data/eye_images/CJR000001/20200403_left_fundus.jpg'),
+            img2 = Image.open('patient_data/eye_images/CJR000001/20240403_left_fundus.jpg'),
             make_responsive=True,
             label1="Prev. Visit",
             label2="Curr. Visit")
@@ -199,7 +199,7 @@ with tab2:
         st.subheader("Right Fundus")
         image_comparison(
             img1 = Image.open('patient_data/eye_images/CJR000001/20240101_right_fundus.jpg'),
-            img2 = Image.open('patient_data/eye_images/CJR000001/20200403_right_fundus.jpg'),
+            img2 = Image.open('patient_data/eye_images/CJR000001/20240403_right_fundus.jpg'),
             make_responsive=True,
             label1="Prev. Visit",
             label2="Curr. Visit")
