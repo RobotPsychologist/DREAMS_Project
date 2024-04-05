@@ -241,7 +241,7 @@ with tab4:
         st.subheader("Right Eye")
         image_comparison(
             img1 = Image.open('patient_data/eye_images/CJR000001/20240403_right_fundus.jpg'),
-            img2 = Image.open('patient_data/ai_segmented_images/CJR000001/20240101_right_ai_seg_75opac.jpg'),
+            img2 = Image.open('patient_data/ai_segmented_images/CJR000001/20240101_right_ai_seg_75opac.png'),
             make_responsive=True,
             label1="Raw Fundus",
             label2="AI Importance Weights")     
